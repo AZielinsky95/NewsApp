@@ -101,17 +101,95 @@
                                             <outlet property="title" destination="hLy-yU-HY3" id="Pwa-4Y-mjb"/>
                                         </connections>
                                     </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="compactCell" id="jGV-Sn-xv1" userLabel="compactCell" customClass="NewsCell" customModule="NewsApp" customModuleProvider="target">
+                                        <rect key="frame" x="12" y="343" width="351" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="351" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="75V-B3-mu1" userLabel="ContainerView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="251" height="100"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0x-BL-EWT">
+                                                            <rect key="frame" x="8" y="8" width="235" height="55"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6P-LU-Ngn">
+                                                            <rect key="frame" x="8" y="67" width="75" height="25"/>
+                                                            <color key="backgroundColor" red="0.88721446699999995" green="0.88721446699999995" blue="0.88721446699999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="25" id="vUS-PK-d66"/>
+                                                                <constraint firstAttribute="width" constant="75" id="zud-NK-w6g"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                            <state key="normal" title="CBC">
+                                                                <color key="titleColor" red="0.88721446699999995" green="0.24859215069999999" blue="0.25336174700000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </state>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIs-Iw-zfo">
+                                                            <rect key="frame" x="91" y="71" width="72" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="sIs-Iw-zfo" secondAttribute="bottom" constant="12" id="62e-E6-Vm8"/>
+                                                        <constraint firstAttribute="trailing" secondItem="W0x-BL-EWT" secondAttribute="trailing" constant="8" id="74g-Ie-bD7"/>
+                                                        <constraint firstAttribute="bottom" secondItem="D6P-LU-Ngn" secondAttribute="bottom" constant="8" id="9Zr-6U-IY5"/>
+                                                        <constraint firstItem="W0x-BL-EWT" firstAttribute="top" secondItem="75V-B3-mu1" secondAttribute="top" constant="8" id="MXP-d8-1Sz"/>
+                                                        <constraint firstItem="sIs-Iw-zfo" firstAttribute="leading" secondItem="D6P-LU-Ngn" secondAttribute="trailing" constant="8" id="NVG-0c-ij2"/>
+                                                        <constraint firstItem="D6P-LU-Ngn" firstAttribute="top" secondItem="W0x-BL-EWT" secondAttribute="bottom" constant="4" id="QX2-a3-JTt"/>
+                                                        <constraint firstItem="W0x-BL-EWT" firstAttribute="leading" secondItem="75V-B3-mu1" secondAttribute="leading" constant="8" id="ep5-ng-rmH"/>
+                                                        <constraint firstItem="D6P-LU-Ngn" firstAttribute="leading" secondItem="75V-B3-mu1" secondAttribute="leading" constant="8" id="tJz-1W-3RP"/>
+                                                        <constraint firstItem="sIs-Iw-zfo" firstAttribute="centerY" secondItem="D6P-LU-Ngn" secondAttribute="centerY" id="uf8-P9-zeY"/>
+                                                    </constraints>
+                                                </view>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="tLw-MQ-8iY">
+                                                    <rect key="frame" x="251" y="0.0" width="100" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="Yrq-AG-1v2"/>
+                                                        <constraint firstAttribute="width" constant="100" id="cuR-ar-UnX"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="tLw-MQ-8iY" firstAttribute="top" secondItem="jGV-Sn-xv1" secondAttribute="top" id="2Jl-ew-lSp"/>
+                                            <constraint firstAttribute="bottom" secondItem="tLw-MQ-8iY" secondAttribute="bottom" id="4yF-jw-e3Q"/>
+                                            <constraint firstItem="75V-B3-mu1" firstAttribute="top" secondItem="jGV-Sn-xv1" secondAttribute="top" id="7uR-xV-PfF"/>
+                                            <constraint firstItem="75V-B3-mu1" firstAttribute="leading" secondItem="jGV-Sn-xv1" secondAttribute="leading" id="HEi-x5-zdX"/>
+                                            <constraint firstAttribute="bottom" secondItem="75V-B3-mu1" secondAttribute="bottom" id="XeR-h8-MSn"/>
+                                            <constraint firstItem="tLw-MQ-8iY" firstAttribute="leading" secondItem="75V-B3-mu1" secondAttribute="trailing" id="hox-Z3-6sh"/>
+                                            <constraint firstAttribute="trailing" secondItem="tLw-MQ-8iY" secondAttribute="trailing" id="sTn-nO-FBZ"/>
+                                        </constraints>
+                                        <size key="customSize" width="351" height="100"/>
+                                        <connections>
+                                            <outlet property="imageView" destination="tLw-MQ-8iY" id="wTZ-G0-IHd"/>
+                                            <outlet property="tagButton" destination="D6P-LU-Ngn" id="SuE-qI-BSE"/>
+                                            <outlet property="timestamp" destination="sIs-Iw-zfo" id="sL6-B6-MEc"/>
+                                            <outlet property="title" destination="W0x-BL-EWT" id="xQg-Az-ieO"/>
+                                        </connections>
+                                    </collectionViewCell>
                                 </cells>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="8mk-zs-fc6"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="8vn-cG-1Rb"/>
                                 </connections>
                             </collectionView>
                             <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vak-A6-gtb">
                                 <rect key="frame" x="0.0" y="618" width="375" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
-                                    <tabBarItem systemItem="favorites" id="jIq-Gl-3jp"/>
-                                    <tabBarItem systemItem="more" id="rP2-Cb-V8J"/>
+                                    <tabBarItem title="Top Stories" id="jIq-Gl-3jp"/>
+                                    <tabBarItem title="Local" id="rP2-Cb-V8J"/>
+                                    <tabBarItem title="Saved" id="x7Y-DH-GZe"/>
+                                    <tabBarItem title="Sections" id="86h-rl-rP3"/>
                                 </items>
                             </tabBar>
                         </subviews>
@@ -128,6 +206,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="News" id="Bae-sQ-Stt">
+                        <barButtonItem key="leftBarButtonItem" title="Compact" id="qLx-eZ-icO">
+                            <connections>
+                                <action selector="compactViewTapped:" destination="BYZ-38-t0r" id="6uI-Z2-8Pq"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="wcP-yG-ngn">
                             <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>

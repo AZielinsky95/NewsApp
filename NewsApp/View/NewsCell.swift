@@ -10,7 +10,6 @@ import UIKit
 
 class NewsCell: UICollectionViewCell
 {
-    
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var title: UILabel!
@@ -18,5 +17,6 @@ class NewsCell: UICollectionViewCell
     @IBOutlet weak var tagButton: UIButton!
     
     @IBOutlet weak var timestamp: UILabel!
+    
     
 }

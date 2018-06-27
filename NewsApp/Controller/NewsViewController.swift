@@ -17,19 +17,31 @@ class NewsViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var compactButton: UIBarButtonItem!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
-       // self.collectionView.la
-        self.navigationController?.navigationBar.barTintColor = UIColor.init(red: (255/255), green: (105/255), blue: (120/255), alpha: 1)
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white,NSAttributedStringKey.font:UIFont(name: "Helvetica Neue", size: 22)!]
-        
+    
+        setupNavBar()
+
         NetworkManager.getTopHeadlines() { (newsitems) in
             DispatchQueue.main.async {
                 self.topHeadlines = newsitems
                 self.collectionView.reloadData()
             }
         }
+    }
+    
+    func setupNavBar()
+    {
+        self.navigationController?.navigationBar.barTintColor = UIColor.init(red: (255/255), green: (105/255), blue: (120/255), alpha: 1)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white,NSAttributedStringKey.font:UIFont(name: "Helvetica Neue", size: 22)!]
+        
+        let compactImg = UIImage(named: "compactView")
+        let tintedImage = compactImg?.withRenderingMode(.alwaysTemplate)
+        self.compactButton.image = tintedImage
+        self.compactButton.tintColor = UIColor.white
     }
     
     @IBAction func compactViewTapped(_ sender: UIBarButtonItem)

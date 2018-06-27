@@ -206,7 +206,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="News" id="Bae-sQ-Stt">
-                        <barButtonItem key="leftBarButtonItem" title="Compact" id="qLx-eZ-icO">
+                        <barButtonItem key="leftBarButtonItem" title="Compact" image="compactView" id="qLx-eZ-icO">
                             <connections>
                                 <action selector="compactViewTapped:" destination="BYZ-38-t0r" id="6uI-Z2-8Pq"/>
                             </connections>
@@ -217,6 +217,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="5yN-lX-Tdf" id="tdH-bI-937"/>
+                        <outlet property="compactButton" destination="qLx-eZ-icO" id="MJE-OQ-AbB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -244,6 +245,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="compactView" width="24" height="24"/>
         <image name="default" width="570" height="321"/>
     </resources>
 </document>

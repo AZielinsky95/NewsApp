@@ -18,7 +18,10 @@ class NewsViewController: UIViewController {
     {
         super.viewDidLoad()
         
-        NetworkManager.getTopHeadlines(country: "us") { (newsitems) in
+        self.navigationController?.navigationBar.barTintColor = UIColor.red
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        
+        NetworkManager.getTopHeadlines() { (newsitems) in
             DispatchQueue.main.async {
                 self.topHeadlines = newsitems
                 self.collectionView.reloadData()
@@ -34,10 +37,24 @@ extension NewsViewController: UICollectionViewDataSource
         cell.imageView.image = topHeadlines[indexPath.row].image
         cell.title.text = topHeadlines[indexPath.row].title
         cell.timestamp.text = topHeadlines[indexPath.row].timestamp
+        
+        if(topHeadlines[indexPath.row].image == nil)
+        {
+            if let url = topHeadlines[indexPath.row].imageURL
+            {
+                NetworkManager.downloadImage(urlString: url, completion: { (img) in
+                    DispatchQueue.main.async {
+                        self.topHeadlines[indexPath.row].image = img
+                        collectionView.reloadData()
+                    }
+                })
+            }
+        }
+        
         cell.layer.shadowColor = UIColor.black.cgColor
         cell.layer.shadowOpacity = 0.5
         cell.layer.shadowOffset = CGSize.zero
-        cell.layer.shadowRadius = 15
+        cell.layer.shadowRadius = 5
         cell.clipsToBounds = false
         cell.layer.masksToBounds = false
         return cell

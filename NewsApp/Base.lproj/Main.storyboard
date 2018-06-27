@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5yN-lX-Tdf">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="IYs-Sr-qFN">
                                     <size key="itemSize" width="351" height="325"/>
@@ -46,7 +46,7 @@
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLy-yU-HY3">
                                                             <rect key="frame" x="8" y="8" width="335" height="55"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -57,13 +57,14 @@
                                                                 <constraint firstAttribute="height" constant="25" id="2mb-hc-125"/>
                                                                 <constraint firstAttribute="width" constant="75" id="BMH-U4-wL6"/>
                                                             </constraints>
-                                                            <state key="normal" title="Tag">
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                            <state key="normal" title="CBC">
                                                                 <color key="titleColor" red="0.88721446699999995" green="0.24859215069999999" blue="0.25336174700000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9R-aw-OFH">
-                                                            <rect key="frame" x="95" y="72.5" width="63" height="14.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <rect key="frame" x="95" y="71.5" width="72" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -105,9 +106,8 @@
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="8mk-zs-fc6"/>
                                 </connections>
                             </collectionView>
-                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vak-A6-gtb">
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vak-A6-gtb">
                                 <rect key="frame" x="0.0" y="618" width="375" height="49"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <tabBarItem systemItem="favorites" id="jIq-Gl-3jp"/>
@@ -117,14 +117,21 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5yN-lX-Tdf" secondAttribute="bottom" id="Amd-dd-jWd"/>
+                            <constraint firstItem="vak-A6-gtb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6jd-Pb-Pt5"/>
+                            <constraint firstItem="vak-A6-gtb" firstAttribute="top" secondItem="5yN-lX-Tdf" secondAttribute="bottom" id="Amd-dd-jWd"/>
+                            <constraint firstItem="vak-A6-gtb" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="UGi-dJ-gL1"/>
+                            <constraint firstItem="vak-A6-gtb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="X3H-E9-Xhm"/>
                             <constraint firstItem="5yN-lX-Tdf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nhk-sc-OpJ"/>
                             <constraint firstItem="5yN-lX-Tdf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ob5-DL-jpF"/>
                             <constraint firstItem="5yN-lX-Tdf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="pbc-qZ-DmS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="News" id="Bae-sQ-Stt"/>
+                    <navigationItem key="navigationItem" title="News" id="Bae-sQ-Stt">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="wcP-yG-ngn">
+                            <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="5yN-lX-Tdf" id="tdH-bI-937"/>
                     </connections>

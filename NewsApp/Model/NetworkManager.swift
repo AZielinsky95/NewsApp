@@ -27,7 +27,7 @@ class NetworkManager
             downloadTask.resume()
     }
     
-    static func getTopHeadlines(country:String,completion: @escaping ([NewsItem]) -> Void)
+    static func getTopHeadlines(completion: @escaping ([NewsItem]) -> Void)
     {
         let sessionConfig = URLSessionConfiguration.default
         

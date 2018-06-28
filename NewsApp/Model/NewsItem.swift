@@ -24,12 +24,12 @@ class NewsItem: NSObject {
         
         //
         let dateComponents = timestamp.components(separatedBy: "T")
-        let timeComponents = dateComponents[1].components(separatedBy: ".")
-        let result = dateComponents[0] + " " + timeComponents[0]
+       // let timeComponents = dateComponents[1].components(separatedBy: ".")
+       // let result = dateComponents[0] + " " + timeComponents[0]
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        formatter.dateFormat = "yyyy-MM-dd" //HH:mm:ss"
         formatter.timeZone = TimeZone.current
-        let date = formatter.date(from: result)
+        let date = formatter.date(from: dateComponents[0])
         formatter.dateFormat = "MMM dd"
         self.timestamp  = formatter.string(from: date!)
         

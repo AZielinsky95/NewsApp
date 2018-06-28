@@ -75,4 +75,53 @@ class NetworkManager
         session.finishTasksAndInvalidate()
     }
     
+    static func getNewsForTopic(topic:String,completion: @escaping ([NewsItem]) -> Void)
+    {
+        let sessionConfig = URLSessionConfiguration.default
+        
+      //  https://newsapi.org/v2/everything?q=Sports&from=2018-06-28&sortBy=popularity&apiKey=0c6e14c6bfa049c28838aa3138761d4c
+
+        let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
+        
+        guard let url = URL(string: "https://newsapi.org/v2/everything?q=\(topic)&sortBy=popularity&apiKey=0c6e14c6bfa049c28838aa3138761d4c") else {return}
+        
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        /* Start a new Task */
+        let task = session.dataTask(with: request, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) -> Void in
+            if (error == nil) {
+                // Success
+                let statusCode = (response as! HTTPURLResponse).statusCode
+                print("URL Session Task Succeeded: HTTP \(statusCode)")
+            }
+            else {
+                // Failure
+                print("URL Session Task Failed: %@", error!.localizedDescription);
+            }
+            
+            guard let json = try? JSONSerialization.jsonObject(with: data!) as? [String: Any] else { return }
+            
+            guard let jsonDictionary = json!["articles"]  as? [Dictionary<String, Any>] else { return }
+            
+            print(jsonDictionary)
+            
+            var newsItems = [NewsItem]()
+            
+            for dict in jsonDictionary
+            {
+                let title = dict["title"] as! String
+                let imageURL = dict["urlToImage"] as? String
+                let timestamp = dict["publishedAt"] as! String
+                let newsURL = dict["url"] as! String
+                let item = NewsItem(title: title, imageURL: imageURL, timestamp: timestamp, url: newsURL)
+                newsItems.append(item)
+            }
+            
+            completion(newsItems);
+        })
+        task.resume()
+        session.finishTasksAndInvalidate()
+    }
 }

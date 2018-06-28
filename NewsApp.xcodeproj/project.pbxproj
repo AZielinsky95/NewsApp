@@ -15,6 +15,7 @@
 		CA1B2F1920E2DE9F00AAD5D9 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1B2F1820E2DE9F00AAD5D9 /* NewsCell.swift */; };
 		CA1B2F1D20E2E0FA00AAD5D9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1B2F1C20E2E0FA00AAD5D9 /* NetworkManager.swift */; };
 		CA1B2F1F20E2E18200AAD5D9 /* NewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1B2F1E20E2E18200AAD5D9 /* NewsItem.swift */; };
+		CAEC992F20E53BB100210385 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC992E20E53BB100210385 /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		CA1B2F1820E2DE9F00AAD5D9 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		CA1B2F1C20E2E0FA00AAD5D9 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		CA1B2F1E20E2E18200AAD5D9 /* NewsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItem.swift; sourceTree = "<group>"; };
+		CAEC992E20E53BB100210385 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				CA1B2F0720E2DB3D00AAD5D9 /* NewsViewController.swift */,
+				CAEC992E20E53BB100210385 /* SearchViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAEC992F20E53BB100210385 /* SearchViewController.swift in Sources */,
 				CA1B2F1D20E2E0FA00AAD5D9 /* NetworkManager.swift in Sources */,
 				CA1B2F1F20E2E18200AAD5D9 /* NewsItem.swift in Sources */,
 				CA1B2F0820E2DB3D00AAD5D9 /* NewsViewController.swift in Sources */,

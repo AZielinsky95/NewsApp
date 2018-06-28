@@ -52,6 +52,28 @@ class NewsViewController: UIViewController {
     
 }
 
+extension NewsViewController: SearchViewControllerDelegate
+{
+    func searchForTopic(topic:String) {
+        
+        NetworkManager.getNewsForTopic(topic: topic) { (newsitems) in
+            DispatchQueue.main.async {
+                self.topHeadlines = newsitems
+                self.collectionView.reloadData()
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "SearchSegue" {
+            if let searchVC = segue.destination as? SearchViewController {
+                searchVC.delegate = self
+            }
+        }
+    }
+}
+
 extension NewsViewController: UICollectionViewDataSource
 {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

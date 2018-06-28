@@ -42,6 +42,31 @@ class SearchViewController: UITableViewController {
              delegate?.searchForTopic(topic: "Politics")
         self.navigationController?.popViewController(animated: true)
             break;
+        case 3:
+            //Politics
+            delegate?.searchForTopic(topic: "Canada")
+            self.navigationController?.popViewController(animated: true)
+            break;
+        case 4:
+            //Politics
+            delegate?.searchForTopic(topic: "Business")
+            self.navigationController?.popViewController(animated: true)
+            break;
+        case 5:
+            //Politics
+            delegate?.searchForTopic(topic: "Health")
+            self.navigationController?.popViewController(animated: true)
+            break;
+        case 6:
+            //Politics
+            delegate?.searchForTopic(topic: "Entertainment")
+            self.navigationController?.popViewController(animated: true)
+            break;
+        case 7:
+            //Politics
+            delegate?.searchForTopic(topic: "World")
+            self.navigationController?.popViewController(animated: true)
+            break;
         default :
             break;
         }
